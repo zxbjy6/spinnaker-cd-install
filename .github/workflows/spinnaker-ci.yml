@@ -61,7 +61,7 @@ jobs:
            docker pull ${REGISTRY_URL}${tag}
         done
            
-     - name: 02-3-同步镜像到阿里云镜像仓库
+     - name: 02-2-同步镜像到阿里云镜像仓库
        run: |
          docker login -u ${{ secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWD}} ${NEW_REGISTRY_URL}
          for tag in $(cat ${TAG_FILE})
